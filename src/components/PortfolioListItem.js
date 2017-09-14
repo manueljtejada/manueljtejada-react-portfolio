@@ -11,7 +11,7 @@ class PortfolioListItem extends Component {
       <article className="col-sm-4 mb-5">
         <div className="browser-mockup mb-4">
           <Link to={`/work/${this.props.id}`}>
-            <img src={thumbnail.url} alt={post.title} className="img-fluid" />
+            <img src={`${thumbnail.url}?w=450`} alt={post.title} className="img-fluid" />
           </Link>
         </div>
         <h5>
