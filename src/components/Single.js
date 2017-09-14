@@ -3,6 +3,8 @@ import { PropTypes } from 'prop-types';
 import { client } from '../services/client';
 import marked from 'marked';
 
+import Asset from './Asset';
+
 class Single extends Component {
   constructor() {
     super();
@@ -74,6 +76,8 @@ class Single extends Component {
         <div className="post-content">
           {post.content}
         </div>
+
+        <Asset id={post.fullScreenshot.sys.id} />
       </article>
     )
   }
