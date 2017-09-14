@@ -17,7 +17,8 @@ class Portfolio extends Component {
   componentDidMount() {
     client.getEntries({
       content_type: portfolioTypeId,
-      limit: this.props.limit
+      limit: this.props.limit,
+      order: '-fields.date'
     })
       .then((response) => {
         this.setState({posts: response.items})
