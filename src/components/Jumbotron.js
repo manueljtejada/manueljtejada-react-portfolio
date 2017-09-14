@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import TypeAnimation from './TypeAnimation';
 
 const Jumbotron = () => {
@@ -16,9 +18,9 @@ const Jumbotron = () => {
           &nbsp;
           from the Dominican Republic.
         </p>
-        <a className="btn btn-secondary btn-rounded mt-2">
+        <Link className="btn btn-secondary btn-rounded mt-2" to="/">
           View my work &raquo;
-        </a>
+        </Link>
       </div>
       <a className="arrow-down">
         <i className="fa fa-long-arrow-down fa-2x"></i>
