@@ -1,5 +1,5 @@
 import React from 'react';
-import TypeAnimation from './Typed';
+import TypeAnimation from './TypeAnimation';
 
 const Jumbotron = () => {
   return (
