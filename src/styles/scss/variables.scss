@@ -1,0 +1,41 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+// See https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss
+
+// Colors
+$brand-primary: #01b6db;
+$red: #fe6968;
+$dark-blue: #1c1d25;
+
+$gray: #888;
+$gray-dark: #4c4c4c;
+$gray-light: #929292;
+
+$black: #000;
+$white: #fff;
+
+// Options
+
+$enable-flex:               true;
+$enable-rounded:            false;
+$enable-shadows:            false;
+$enable-gradients:          false;
+$enable-transitions:        true;
+
+// Navbar
+$navbar-inverse-color:             #fff;
+
+// Typography
+
+$font-family-sans-serif: 'Proxima Nova', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-serif: 'Libre Baskerville', serif;
+$font-family-base:       $font-family-serif;
+$headings-font-family:   $font-family-sans-serif;
+
+// Buttons
+$btn-secondary-color:            $white;
+$btn-secondary-bg:               $red;
+$btn-secondary-border:           transparent;

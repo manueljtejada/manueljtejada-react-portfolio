@@ -1,0 +1,18 @@
+.browser-mockup {
+  border-radius: 3px 3px 0 0;
+  border-top: 2em solid rgba(230, 230, 230, .25);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, .1);
+  position: relative;
+  &::before {
+    background-color: #f44;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #ff6057, 1.5em 0 0 2px #ffc12e, 3em 0 0 2px #28ca40;
+    content: '';
+    display: block;
+    height: .5em;
+    left: 1em;
+    position: absolute;
+    top: -1.25em;
+    width: .5em;
+  }
+}

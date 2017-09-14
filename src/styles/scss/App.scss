@@ -1,0 +1,47 @@
+// Buttons
+
+.btn {
+  border: 0;
+  letter-spacing: 1.5px;
+  padding: 12px 18px;
+  text-transform: uppercase;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: darken($red, 5%);
+  }
+}
+
+.btn-rounded {
+  border-radius: 50px;
+}
+
+.btn-secondary {
+  background: $red;
+  color: $white;
+}
+
+
+// Typography
+
+.page-subheading {
+  color: $gray-light;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.post-link {
+  color: $gray-dark;
+}
+
+.text-muted > a {
+  color: inherit;
+}
+
+a:hover {
+  color: $red;
+  text-decoration: none;
+  transition: all .3s;
+}
