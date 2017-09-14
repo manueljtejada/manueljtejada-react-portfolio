@@ -7,9 +7,10 @@ class TypeAnimation extends Component {
 
     const options = {
       strings,
-      typeSpeed: 50,
-      backSpeed: 50,
-      backDelay: 700
+      typeSpeed: 60,
+      backSpeed: 60,
+      backDelay: 1500,
+      loop: true
     }
 
     this.typed = new Typed(this.el, options);
