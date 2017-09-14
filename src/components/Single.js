@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { client } from '../services/client';
+import marked from 'marked';
 
 class Single extends Component {
   constructor() {
     super();
+
+    this.getParsedMarkdown = this.getParsedMarkdown.bind(this);
 
     this.state = {
       post: null
@@ -23,6 +26,12 @@ class Single extends Component {
     }
   }
 
+  getParsedMarkdown(content) {
+    return {
+      __html: marked(content, {sanitize: true})
+    }
+  }
+
   render () {
     if (!this.state.post) {
       return <h1>Not Found</h1>
@@ -33,7 +42,7 @@ class Single extends Component {
 
     return(
       <article className="post container my-5">
-        <header className="d-flex justify-content-between">
+        <header className="d-flex justify-content-between mb-4">
           <h1 className="post-title">
             <b>{this.state.post.fields.title}</b>
           </h1>
@@ -44,9 +53,8 @@ class Single extends Component {
           </div>
         </header>
 
-        <div className="post-intro">
-          {post.intro}
-        </div>
+        <div className="post-intro"
+          dangerouslySetInnerHTML={this.getParsedMarkdown(post.description)} />
 
         <aside className="byline row my-5">
           <div className="col">
