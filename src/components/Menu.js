@@ -11,7 +11,7 @@ const Menu = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <Link className="navbar-brand" to="/">
-          <img src={logo} height="40" />
+          <img src={logo} height="40" alt="Manuel J. Tejada logo" />
         </Link>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
