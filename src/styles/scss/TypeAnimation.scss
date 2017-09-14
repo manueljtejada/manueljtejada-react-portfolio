@@ -1,0 +1,16 @@
+.typed-cursor {
+  animation: blink .7s infinite;
+  opacity: 1;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.typed-fade-out {
+  animation: 0;
+  opacity: 0;
+  transition: opacity .25s;
+}
