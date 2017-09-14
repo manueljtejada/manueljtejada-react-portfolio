@@ -9,3 +9,12 @@
 @import 'PortfolioListItem';
 @import 'TypeAnimation';
 @import 'Single';
+
+html,
+#root {
+  background: #fafafa;
+}
+
+main {
+  background: $white;
+}
