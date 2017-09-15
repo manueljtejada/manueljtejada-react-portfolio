@@ -1,6 +1,6 @@
 import React from 'react';
 import Jumbotron from './Jumbotron';
-import Portfolio from './Portfolio';
+import PortfolioList from './PortfolioList';
 
 class Home extends React.Component {
   render() {
@@ -9,7 +9,7 @@ class Home extends React.Component {
         <Jumbotron />
         <h6 className="page-subheading mt-5">Recent</h6>
         <h2 className="mb-5">Latest Work</h2>
-        <Portfolio limit={3} />
+        <PortfolioList limit={3} />
       </div>
     )
   }

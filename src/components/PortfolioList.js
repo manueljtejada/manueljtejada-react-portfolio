@@ -5,7 +5,7 @@ import PortfolioListItem from './PortfolioListItem';
 import { client } from '../services/client';
 import { portfolioTypeId } from '../config';
 
-class Portfolio extends Component {
+class PortfolioList extends Component {
   constructor() {
     super();
 
@@ -36,12 +36,8 @@ class Portfolio extends Component {
   }
 }
 
-Portfolio.propTypes = {
-  app: PropTypes.object,
-  galleries: PropTypes.object,
-  loadPost: PropTypes.func,
-  loadPosts: PropTypes.func,
-  params: PropTypes.object
+PortfolioList.propTypes = {
+  limit: PropTypes.number
 }
 
-export default Portfolio;
+export default PortfolioList;
