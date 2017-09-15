@@ -1,0 +1,32 @@
+.jumbotron {
+  background: url("../../images/jumbotron.jpg") no-repeat left top;
+  background-size: cover;
+  color: #fff;
+  height: 450px;
+  margin: -24px -15px 0;
+  padding-top: 120px;
+  text-align: center;
+  z-index: -9; }
+  .jumbotron.short {
+    height: 250px; }
+  .jumbotron h1 {
+    font-weight: 700; }
+  .jumbotron .arrow-down {
+    bottom: 50px;
+    color: #fff;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: bottom .3s; }
+    .jumbotron .arrow-down .fa {
+      text-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.5); }
+    .jumbotron .arrow-down:hover {
+      bottom: 55px;
+      transition: bottom .3s; }
+
+.navbar {
+  background: transparent !important; }
+  .navbar.bg-inverse {
+    background: #000 !important; }
+
+/*# sourceMappingURL=Jumbotron.css.map */
