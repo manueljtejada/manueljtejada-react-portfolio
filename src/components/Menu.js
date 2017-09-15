@@ -31,6 +31,11 @@ const Menu = () => {
                   About
                 </NavLink>
               </li>
+              <li>
+                <NavLink className="nav-link" activeClassName="active" to="/contact">
+                  Contact
+                </NavLink>
+              </li>
           </ul>
         </div>
       </nav>
