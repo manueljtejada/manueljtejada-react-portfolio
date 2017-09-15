@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 import Typed from 'typed.js';
 
 class TypeAnimation extends Component {
@@ -25,6 +26,10 @@ class TypeAnimation extends Component {
       <b ref={(el) => { this.el = el; }}></b>
     )
   }
+}
+
+TypeAnimation.propTypes = {
+  strings: PropTypes.array
 }
 
 export default TypeAnimation;
