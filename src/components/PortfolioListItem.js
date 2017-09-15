@@ -3,6 +3,16 @@ import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class PortfolioListItem extends Component {
+  constructor() {
+    super();
+
+    this.stripUrl = this.stripUrl.bind(this);
+  }
+
+  stripUrl(url) {
+    return url.replace(/(^\w+:|^)\/\//, '');
+  }
+
   render () {
     const post = this.props.post.fields;
     const thumbnail = post.thumbnail.fields.file;
@@ -20,7 +30,7 @@ class PortfolioListItem extends Component {
           </Link>
         </h5>
         <div className="text-sm text-muted">
-          <Link to={post.url} target="_blank">{post.url}</Link>
+          <Link to={post.url} target="_blank">{this.stripUrl(post.url)}</Link>
         </div>
       </article>
     )
