@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-import { client } from '../services/client';
+import { client } from '../utils/contentful';
 
 class Asset extends Component {
 	constructor() {

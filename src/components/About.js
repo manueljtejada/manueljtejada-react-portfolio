@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { client } from '../services/client';
+import { client } from '../utils/contentful';
 import marked from 'marked';
 
 class About extends Component {
