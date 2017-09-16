@@ -40,7 +40,6 @@ class Single extends Component {
     }
 
     const post = this.state.post.fields;
-    // const thumbnail = post.thumbnail.fields.file;
 
     return(
       <article className="post container my-5">
