@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
+import { Provider } from 'react-redux';
+import store from '../store';
+
 import Menu from './Menu';
 import Home from './Home';
 import PortfolioList from './PortfolioList';
@@ -23,20 +26,22 @@ class App extends Component {
 		return (
 			<main className="container">
 				<BrowserRouter>
-					<div>
-						<Menu />
-						<Route component={logPageView} />
-						<Switch>
-							<Route exact path="/" component={Home} />
-							<Route exact path="/work" component={PortfolioList} />
-							<Route exact path="/work/:id" component={Single} />
-							<Route exact path="/about" component={About} />
-							<Redirect to="/" />
-						</Switch>
-					</div>
+					<Provider store={store}>
+						<div>
+							<Menu />
+							<Route component={logPageView} />
+							<Switch>
+								<Route exact path="/" component={Home} />
+								<Route exact path="/work" component={PortfolioList} />
+								<Route exact path="/work/:id" component={Single} />
+								<Route exact path="/about" component={About} />
+								<Redirect to="/" />
+							</Switch>
+						</div>
+					</Provider>
 				</BrowserRouter>
 				{this.props.children}
-				<Footer />
+        <Footer />
 			</main>
 		);
 	}
