@@ -13,33 +13,33 @@ import ReactGA from 'react-ga';
 ReactGA.initialize('UA-98482386-1');
 
 const logPageView = () => {
-  ReactGA.set({ page: window.location.pathname });
-  ReactGA.pageview(window.location.pathname);
-  return null;
+	ReactGA.set({ page: window.location.pathname });
+	ReactGA.pageview(window.location.pathname);
+	return null;
 };
 
 class App extends Component {
-  render() {
-    return (
-      <main className="container">
-        <BrowserRouter>
-          <div>
-            <Menu />
-            <Route component={logPageView} />
-            <Switch>
-              <Route exact path="/" component={Home}></Route>
-              <Route exact path="/work" component={PortfolioList}></Route>
-              <Route exact path="/work/:id" component={Single}></Route>
-              <Route exact path="/about" component={About}></Route>
-              <Redirect to="/" />
-            </Switch>
-          </div>
-        </BrowserRouter>
-        {this.props.children}
-        <Footer />
-      </main>
-    );
-  }
+	render() {
+		return (
+			<main className="container">
+				<BrowserRouter>
+					<div>
+						<Menu />
+						<Route component={logPageView} />
+						<Switch>
+							<Route exact path="/" component={Home} />
+							<Route exact path="/work" component={PortfolioList} />
+							<Route exact path="/work/:id" component={Single} />
+							<Route exact path="/about" component={About} />
+							<Redirect to="/" />
+						</Switch>
+					</div>
+				</BrowserRouter>
+				{this.props.children}
+				<Footer />
+			</main>
+		);
+	}
 }
 
 export default App;

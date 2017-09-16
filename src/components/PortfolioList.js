@@ -6,38 +6,41 @@ import { client } from '../services/client';
 import { portfolioTypeId } from '../config';
 
 class PortfolioList extends Component {
-  constructor() {
-    super();
+	constructor() {
+		super();
 
-    this.state = {
-      posts: []
-    }
-  }
+		this.state = {
+			posts: []
+		};
+	}
 
-  componentDidMount() {
-    client.getEntries({
-      content_type: portfolioTypeId,
-      limit: this.props.limit,
-      order: '-fields.date'
-    })
-      .then((response) => {
-        this.setState({posts: response.items})
-      })
-  }
+	componentDidMount() {
+		client
+			.getEntries({
+				content_type: portfolioTypeId,
+				limit: this.props.limit,
+				order: '-fields.date'
+			})
+			.then(response => {
+				this.setState({ posts: response.items });
+			});
+	}
 
-  render() {
-    const { posts } = this.state;
+	render() {
+		const { posts } = this.state;
 
-    return (
-      <div className="row posts">
-        {posts.map((post, i) => <PortfolioListItem id={post.sys.id} key={i} post={post} />)}
-      </div>
-    )
-  }
+		return (
+			<div className="row posts">
+				{posts.map((post, i) => (
+					<PortfolioListItem id={post.sys.id} key={i} post={post} />
+				))}
+			</div>
+		);
+	}
 }
 
 PortfolioList.propTypes = {
-  limit: PropTypes.number
-}
+	limit: PropTypes.number
+};
 
 export default PortfolioList;

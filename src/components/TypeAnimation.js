@@ -3,33 +3,37 @@ import { PropTypes } from 'prop-types';
 import Typed from 'typed.js';
 
 class TypeAnimation extends Component {
-  componentDidMount() {
-    const { strings } = this.props;
+	componentDidMount() {
+		const { strings } = this.props;
 
-    const options = {
-      strings,
-      typeSpeed: 60,
-      backSpeed: 60,
-      backDelay: 1500,
-      loop: true
-    }
+		const options = {
+			strings,
+			typeSpeed: 60,
+			backSpeed: 60,
+			backDelay: 1500,
+			loop: true
+		};
 
-    this.typed = new Typed(this.el, options);
-  }
+		this.typed = new Typed(this.el, options);
+	}
 
-  componentWillUnmount() {
-    this.typed.destroy();
-  }
+	componentWillUnmount() {
+		this.typed.destroy();
+	}
 
-  render() {
-    return (
-      <b ref={(el) => { this.el = el; }}></b>
-    )
-  }
+	render() {
+		return (
+			<b
+				ref={el => {
+					this.el = el;
+				}}
+			/>
+		);
+	}
 }
 
 TypeAnimation.propTypes = {
-  strings: PropTypes.array
-}
+	strings: PropTypes.array
+};
 
 export default TypeAnimation;
