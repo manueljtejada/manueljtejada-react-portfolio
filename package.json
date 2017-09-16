@@ -29,5 +29,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "sass": "sass --watch src/styles/scss:src/styles/css"
+  },
+  "devDependencies": {
+    "prettier": "^1.7.0"
   }
 }
