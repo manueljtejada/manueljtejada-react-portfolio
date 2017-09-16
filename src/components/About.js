@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { client } from '../services/client';
 import marked from 'marked';
 
-class About extends React.Component {
+class About extends Component {
   constructor() {
     super();
 
