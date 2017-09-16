@@ -32,9 +32,12 @@ const Menu = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="nav-link" activeClassName="active" to="/contact">
-                  Contact
-                </NavLink>
+                <a href="mailto:manute32@gmail.com"
+                  className="nav-link"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Get in touch
+                </a>
               </li>
           </ul>
         </div>

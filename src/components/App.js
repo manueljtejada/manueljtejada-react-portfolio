@@ -6,7 +6,6 @@ import Home from './Home';
 import PortfolioList from './PortfolioList';
 import Single from './Single';
 import About from './About';
-import Contact from './Contact';
 import Footer from './Footer';
 
 // Google Analytics
@@ -32,7 +31,6 @@ class App extends Component {
               <Route exact path="/work" component={PortfolioList}></Route>
               <Route exact path="/work/:id" component={Single}></Route>
               <Route exact path="/about" component={About}></Route>
-              <Route exact path="/contact" component={Contact}></Route>
               <Redirect to="/" />
             </Switch>
           </div>
