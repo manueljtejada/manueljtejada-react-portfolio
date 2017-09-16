@@ -2,32 +2,19 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 
 import PortfolioListItem from './PortfolioListItem';
-import { client } from '../services/client';
-import { portfolioTypeId } from '../config';
+
+import { connect } from 'react-redux';
+import { fetchPosts } from '../actions/actionCreators';
 
 class PortfolioList extends Component {
-	constructor() {
-		super();
-
-		this.state = {
-			posts: []
-		};
-	}
-
 	componentDidMount() {
-		client
-			.getEntries({
-				content_type: portfolioTypeId,
-				limit: this.props.limit,
-				order: '-fields.date'
-			})
-			.then(response => {
-				this.setState({ posts: response.items });
-			});
-	}
+    if (this.props.posts.length < 1) {
+      this.props.dispatch(fetchPosts());
+    }
+  }
 
 	render() {
-		const { posts } = this.state;
+		const { posts } = this.props;
 
 		return (
 			<div className="row posts">
@@ -39,8 +26,14 @@ class PortfolioList extends Component {
 	}
 }
 
+const mapStateToProps = state => {
+  return {
+    posts: state.posts,
+  };
+};
+
 PortfolioList.propTypes = {
 	limit: PropTypes.number
 };
 
-export default PortfolioList;
+export default connect(mapStateToProps)(PortfolioList);
