@@ -9,6 +9,16 @@ import About from './About';
 import Contact from './Contact';
 import Footer from './Footer';
 
+// Google Analytics
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-98482386-1');
+
+const logPageView = () => {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+  return null;
+};
+
 class App extends Component {
   render() {
     return (
@@ -16,6 +26,7 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Menu />
+            <Route component={logPageView} />
             <Switch>
               <Route exact path="/" component={Home}></Route>
               <Route exact path="/work" component={PortfolioList}></Route>
