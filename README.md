@@ -1,4 +1,4 @@
-Portfolio site built with React.js and Contentful
+Portfolio site built with React.js, Redux and Contentful
 
 ## Setup
 
