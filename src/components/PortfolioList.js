@@ -18,7 +18,7 @@ class PortfolioList extends Component {
 
 		return (
 			<div className="row posts">
-				{posts.map((post, i) => (
+				{posts.slice(0, this.props.limit).map((post, i) => (
 					<PortfolioListItem id={post.sys.id} key={i} post={post} />
 				))}
 			</div>
