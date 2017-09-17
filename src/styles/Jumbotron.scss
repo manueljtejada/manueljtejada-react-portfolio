@@ -1,7 +1,9 @@
+@import './variables.scss';
+
 .jumbotron {
-  background: url('../../images/jumbotron.jpg') no-repeat left top;
+  background: url('../images/jumbotron.jpg') no-repeat left top;
   background-size: cover;
-  color: #fff;
+  color: $white;
   height: 450px;
   margin: -24px -15px 0;
   padding-top: 120px;
@@ -18,7 +20,7 @@
 
   .arrow-down {
     bottom: 50px;
-    color: #fff;
+    color: $white;
     left: 50%;
     position: absolute;
     transform: translateX(-50%);

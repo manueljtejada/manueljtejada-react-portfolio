@@ -1,0 +1,19 @@
+@import 'bootstrap/scss/bootstrap';
+
+@import 'App.scss';
+@import 'Menu.scss';
+@import 'Footer.scss';
+@import 'Portfolio.scss';
+@import 'Jumbotron.scss';
+@import 'PortfolioListItem.scss';
+@import 'TypeAnimation.scss';
+@import 'Single.scss';
+
+html,
+#root {
+  background: #fafafa;
+}
+
+main {
+  background: $white;
+}
