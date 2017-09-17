@@ -16,15 +16,13 @@ export const addPost = (fields, id) => {
 // Fetch a portfolio item post
 export const fetchPost = id => {
   return function(dispatch, getState) {
-    console.log('Fetching entry...');
     getEntry(id)
       .then(response => {
-        console.log(response);
         dispatch(addPost(response.fields, id));
       })
       .catch(error => {
-        console.log('error occured');
-        console.log(error);
+        console.error('error occured');
+        console.error(error);
       });
   };
 };
@@ -43,7 +41,6 @@ export const setPosts = posts => {
 // Fetch all portfolio item posts
 export const fetchPosts = () => {
   return function(dispatch, getState) {
-    console.log('Fetching entries...');
     getEntries({
       content_type: 'portfolioItem',
       order: '-fields.date',
@@ -52,8 +49,8 @@ export const fetchPosts = () => {
         dispatch(setPosts(response.items));
       })
       .catch(error => {
-        console.log('error occured');
-        console.log(error);
+        console.error('An error occured');
+        console.error(error);
       });
   };
 };
@@ -61,7 +58,6 @@ export const fetchPosts = () => {
 /**
  * Assets
  */
-// Add all portfolio item posts for the listing view
 export const addAsset = (fields, id) => {
   return {
     type: ADD_ASSET,
@@ -70,18 +66,16 @@ export const addAsset = (fields, id) => {
   };
 };
 
-// Fetch a portfolio item post
+// Fetch an asset
 export const fetchAsset = id => {
   return function(dispatch, getState) {
-    console.log('Fetching entry...');
     getAsset(id)
       .then(response => {
-        console.log(response);
         dispatch(addPost(response.fields, id));
       })
       .catch(error => {
-        console.log('error occured');
-        console.log(error);
+        console.error('An error occured');
+        console.error(error);
       });
   };
 };
