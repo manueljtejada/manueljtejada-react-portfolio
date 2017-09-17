@@ -1,5 +1,5 @@
-import { FETCH_POSTS, ADD_POST } from './index';
-import { getEntries, getEntry } from '../utils/contentful';
+import { FETCH_POSTS, ADD_POST, ADD_ASSET } from './index';
+import { getEntries, getEntry, getAsset } from '../utils/contentful';
 
 /**
  * Single Portfolio Item Posts
@@ -50,6 +50,34 @@ export const fetchPosts = () => {
     })
       .then(response => {
         dispatch(setPosts(response.items));
+      })
+      .catch(error => {
+        console.log('error occured');
+        console.log(error);
+      });
+  };
+};
+
+/**
+ * Assets
+ */
+// Add all portfolio item posts for the listing view
+export const addAsset = (fields, id) => {
+  return {
+    type: ADD_ASSET,
+    fields,
+    id,
+  };
+};
+
+// Fetch a portfolio item post
+export const fetchAsset = id => {
+  return function(dispatch, getState) {
+    console.log('Fetching entry...');
+    getAsset(id)
+      .then(response => {
+        console.log(response);
+        dispatch(addPost(response.fields, id));
       })
       .catch(error => {
         console.log('error occured');

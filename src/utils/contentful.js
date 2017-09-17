@@ -8,3 +8,5 @@ export const client = createClient({
 export const getEntry = entry => client.getEntry(entry);
 
 export const getEntries = options => client.getEntries(options);
+
+export const getAsset = asset => client.getAsset(asset);
