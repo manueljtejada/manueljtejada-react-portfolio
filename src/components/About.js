@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
-import { client } from '../utils/contentful';
 import marked from 'marked';
+
+import { connect } from 'react-redux';
+import { fetchPost } from '../actions/actionCreators';
 
 class About extends Component {
 	constructor() {
 		super();
 
 		this.getParsedMarkdown = this.getParsedMarkdown.bind(this);
-
-		this.state = {
-			content: null
-		};
 	}
 
 	componentDidMount() {
-		client.getEntry('1gqW2X8iamOWI0ayuWUWcq').then(response => {
-			this.setState({ content: response });
-		});
-	}
+    this.props.dispatch(fetchPost('1gqW2X8iamOWI0ayuWUWcq'));
+  }
 
 	getParsedMarkdown(content) {
 		return {
@@ -26,11 +22,11 @@ class About extends Component {
 	}
 
 	render() {
-		if (!this.state.content) {
+		if (!this.props.post) {
 			return <h1>Loading...</h1>;
 		}
 
-		const content = this.state.content.fields;
+		const content = this.props.post;
 
 		return (
 			<div className="p-3">
@@ -63,4 +59,10 @@ class About extends Component {
 	}
 }
 
-export default About;
+const mapStateToProps = (state) => {
+  return {
+		post: state.post['1gqW2X8iamOWI0ayuWUWcq']
+	}
+};
+
+export default connect(mapStateToProps)(About);
