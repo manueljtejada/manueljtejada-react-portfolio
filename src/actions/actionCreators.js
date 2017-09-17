@@ -21,7 +21,7 @@ export const fetchPost = id => {
         dispatch(addPost(response.fields, id));
       })
       .catch(error => {
-        console.error('error occured');
+        console.error('An error occured');
         console.error(error);
       });
   };
