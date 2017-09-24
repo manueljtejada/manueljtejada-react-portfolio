@@ -6,7 +6,10 @@ import logo from '../images/logo.svg';
 const Menu = () => {
 	return (
 		<header className="site-header" role="banner">
-			<nav className="navbar navbar-expand-lg navbar-ligh bg-light">
+			<nav className="navbar navbar-expand-lg navbar-light bg-light">
+				<Link className="navbar-brand" to="/">
+					<img src={logo} height="40" alt="Manuel J. Tejada logo" />
+				</Link>
 				<button
 					className="navbar-toggler navbar-toggler-right"
 					type="button"
@@ -18,9 +21,6 @@ const Menu = () => {
 				>
 					<span className="navbar-toggler-icon" />
 				</button>
-				<Link className="navbar-brand" to="/">
-					<img src={logo} height="40" alt="Manuel J. Tejada logo" />
-				</Link>
 
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul className="navbar-nav ml-auto">
