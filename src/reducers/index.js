@@ -16,7 +16,7 @@ const addPost = (state, action) => {
 // Single assets are added to the `asset` object
 const addAsset = (state, action) => {
   const newAssetData = {};
-  Object.assign(newAssetData, state.post, { [action.id]: action.fields });
+  Object.assign(newAssetData, state.asset, { [action.id]: action.fields });
   return Object.assign({}, state, { asset: newAssetData });
 };
 
