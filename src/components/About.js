@@ -12,7 +12,7 @@ class About extends Component {
 	}
 
 	componentDidMount() {
-    this.props.dispatch(fetchPost('1gqW2X8iamOWI0ayuWUWcq'));
+		this.props.dispatch(fetchPost('1gqW2X8iamOWI0ayuWUWcq'));
   }
 
 	getParsedMarkdown(content) {
