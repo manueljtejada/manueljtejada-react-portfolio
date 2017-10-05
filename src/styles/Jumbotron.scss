@@ -1,42 +1,5 @@
 @import './variables.scss';
 
-.jumbotron {
-  background: url('../images/jumbotron.jpg') no-repeat left top;
-  background-size: cover;
-  color: $white;
-  height: 450px;
-  margin: -24px -15px 0;
-  padding-top: 120px;
-  text-align: center;
-  z-index: -9;
-
-  &.short {
-    height: 250px;
-  }
-
-  h1 {
-    font-weight: 700;
-  }
-
-  .arrow-down {
-    bottom: 50px;
-    color: $white;
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%);
-    transition: bottom .3s;
-
-    .fa {
-      text-shadow: 2px 0 4px 0 fade-out(#000, .5);
-    }
-
-    &:hover {
-      bottom: 55px;
-      transition: bottom .3s;
-    }
-  }
-}
-
 .navbar {
   background: transparent !important;
 

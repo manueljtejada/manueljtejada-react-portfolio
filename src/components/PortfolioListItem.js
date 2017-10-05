@@ -2,8 +2,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 import { fetchPost } from '../actions/actionCreators';
+
+const BrowserMockup = styled.div`
+	border-radius: 3px 3px 0 0;
+	border-top: 2em solid rgba(230, 230, 230, .25);
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, .1);
+	position: relative;
+	&::before {
+		background-color: #f44;
+		border-radius: 50%;
+		box-shadow: 0 0 0 2px #ff6057, 1.5em 0 0 2px #ffc12e, 3em 0 0 2px #28ca40;
+		content: '';
+		display: block;
+		height: .5em;
+		left: 1em;
+		position: absolute;
+		top: -1.25em;
+		width: .5em;
+	}
+`;
 
 class PortfolioListItem extends Component {
 	constructor() {
@@ -28,7 +48,7 @@ class PortfolioListItem extends Component {
 
 		return (
 			<article className="col-sm-4 mb-5">
-				<div className="browser-mockup mb-4">
+				<BrowserMockup className="mb-4">
 					<Link to={`/work/${this.props.id}`}>
 						<img
 							src={`${thumbnail.url}?w=450`}
@@ -36,7 +56,7 @@ class PortfolioListItem extends Component {
 							className="img-fluid"
 						/>
 					</Link>
-				</div>
+				</BrowserMockup>
 				<h5>
 					<Link className="post-link" to={post.url}>
 						<b>{post.title}</b>

@@ -1,11 +1,34 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
+import styled from 'styled-components';
 import marked from 'marked';
 
 import { connect } from 'react-redux';
 import { fetchPost } from '../actions/actionCreators';
 
 import Asset from './Asset';
+
+const Wrapper = styled.article`
+	h1 {
+		font-size: 3em;
+	}
+	&-intro {
+    color: #929292;
+    font-size: 1.325em;
+	}
+	.byline {
+    h6 {
+      color: lighten(#929292, 5%);
+      text-transform: uppercase;
+    }
+	}
+	&-content {
+    img {
+      box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+      max-width: 100%;
+    }
+  }
+`
 
 class Single extends Component {
 	componentDidMount() {
@@ -28,7 +51,7 @@ class Single extends Component {
 		}
 
 		return (
-			<article className="post container my-5">
+			<Wrapper className="container my-5">
 				<header className="d-flex justify-content-between mb-4">
 					<h1 className="post-title">
 						<b>{post.title}</b>
@@ -65,7 +88,7 @@ class Single extends Component {
 				</aside>
 
 				<Asset id={post.fullScreenshot.sys.id} />
-			</article>
+			</Wrapper>
 		);
 	}
 }
