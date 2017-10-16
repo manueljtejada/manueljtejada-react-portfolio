@@ -1,12 +1,28 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 import logo from '../images/logo.svg';
+
+const MenuWrapper = styled.nav`
+	background: transparent !important;
+	border-bottom: 1px solid #f2f2f2;
+	margin-bottom: 1.5em;
+	min-height: 80px;
+
+	.nav-link {
+		color: #888;
+
+		&.active {
+		color: #fe6968;
+		}
+	}
+`;
 
 const Menu = () => {
 	return (
 		<header className="site-header" role="banner">
-			<nav className="navbar navbar-expand-lg navbar-light bg-light">
+			<MenuWrapper className="navbar navbar-expand-lg navbar-light bg-light">
 				<Link className="navbar-brand" to="/">
 					<img src={logo} height="40" alt="Manuel J. Tejada logo" />
 				</Link>
@@ -60,7 +76,7 @@ const Menu = () => {
 						</li>
 					</ul>
 				</div>
-			</nav>
+			</MenuWrapper>
 		</header>
 	);
 };

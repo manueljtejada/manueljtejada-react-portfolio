@@ -20,6 +20,21 @@ const Wrapper = styled.header`
 	}
 `;
 
+const Button = styled.span`
+	border: 0;
+	letter-spacing: 1.5px;
+	padding: 12px 18px;
+	text-transform: uppercase;
+
+	border-radius: ${props => props.rounded && '50px'};
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: darken(#fe6968, 5%);
+	}
+`;
+
 const Jumbotron = () => {
 	return (
 		<Wrapper>
@@ -30,7 +45,7 @@ const Jumbotron = () => {
 					<TypeAnimation strings={['Web Designer', 'Frontend Developer']} />
 					&nbsp; from the Dominican Republic.
 				</p>
-				<Link className="btn btn-secondary btn-rounded mt-2" to="/">
+				<Link className="btn btn-primary btn-rounded mt-2" to="/">
 					View my work &raquo;
 				</Link>
 			</div>
