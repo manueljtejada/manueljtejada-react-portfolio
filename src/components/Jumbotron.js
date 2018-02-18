@@ -45,7 +45,7 @@ const Jumbotron = () => {
 					<TypeAnimation strings={['Web Designer', 'Frontend Developer']} />
 					&nbsp; from the Dominican Republic.
 				</p>
-				<Link className="btn btn-primary btn-rounded mt-2" to="/">
+				<Link className="btn btn-secondary btn-rounded mt-2" to="/">
 					View my work &raquo;
 				</Link>
 			</div>
