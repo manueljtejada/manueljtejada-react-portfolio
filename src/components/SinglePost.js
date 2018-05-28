@@ -67,10 +67,12 @@ class Single extends Component {
 					</div>
 				</header>
 
-				<div
-					className="post-intro"
-					dangerouslySetInnerHTML={this.getParsedMarkdown(post.description)}
-				/>
+				{post.description &&
+					<div
+						className="post-intro"
+						dangerouslySetInnerHTML={this.getParsedMarkdown(post.description)}
+					/>
+				}
 
 				<aside className="byline row my-5">
 					<div className="col">
@@ -87,7 +89,7 @@ class Single extends Component {
 					</div>
 				</aside>
 
-				<Asset id={post.fullScreenshot.sys.id} />
+				{post.fullScreenshot && <Asset id={post.fullScreenshot.sys.id} />}
 			</Wrapper>
 		);
 	}
