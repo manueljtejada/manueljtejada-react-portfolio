@@ -59,7 +59,7 @@ class Single extends Component {
 					<div>
 						{post.url &&
 							<a
-								href={}
+								href={post.url}
 								target="_blank"
 								className="btn btn-secondary btn-rounded"
 							>
